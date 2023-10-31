@@ -1,0 +1,13 @@
+.calculator {
+    max-width: 500px;
+}
+
+@media (max-width: 720px){
+    .calculator {
+        width: 100%;
+    }
+}
+
+.text-green {
+    color: #079942 !important;
+}
