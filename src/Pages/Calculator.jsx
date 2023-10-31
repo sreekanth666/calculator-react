@@ -8,7 +8,7 @@ function Calculator() {
     const [isDarkMode, setIsDarkMode] = useState(false)
     const handleInput = (value, action) => {
         setExpression(expression + value)
-        if (action == false) {
+        if (action === false) {
             setTempExpression(tempExpression+value)
         }
         else {
@@ -19,12 +19,13 @@ function Calculator() {
     const clear = () => {
         setExpression("")
         setResult("")
-        setTempExpression("0")
+        setTempExpression("‎")
     }
 
     const calculate = () => {
         try {
-            setResult(eval(expression))
+            const temp = eval(expression)
+            setResult(temp.toLocaleString())
         } catch (error) {
             setResult("Invalid expression")
         }
@@ -48,7 +49,7 @@ function Calculator() {
                             "Expression"
                         }
                     </div>
-                    <div className={isDarkMode?"result fs-1 fw-medium text-light":"result fs-1 fw-medium"}>
+                    <div className={isDarkMode?"result fs-1 fw-medium text-light":"result fs-1 fw-medium"} style={{wordWrap:"break-word"}}>
                         {
                             result?
                             `=${result}` :
