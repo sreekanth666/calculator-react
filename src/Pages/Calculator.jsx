@@ -36,14 +36,14 @@ function Calculator() {
                         {
                             expression?
                             expression :
-                            "History"
+                            "Expression"
                         }
                     </div>
                     <div className={isDarkMode?"result fs-1 fw-medium text-light":"result fs-1 fw-medium"}>
                         = {
                             result?
                             result :
-                            "Result"
+                            "0"
                         }
                     </div>
                 </div>
